@@ -409,7 +409,7 @@ int main(int argc, char **argv) {
         if (index >= low && index < up) {
 #endif
           u64Int curr_num = Table[index];
-          if (curr_num == -1)
+          if (curr_num == tablesize)
             Table[index] ^= ran[j];
           // Table[index] ^= ran[j];
 #if VERBOSE
