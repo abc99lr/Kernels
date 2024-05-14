@@ -408,7 +408,10 @@ int main(int argc, char **argv) {
 #elif defined(CHUNKED)
         if (index >= low && index < up) {
 #endif
-          Table[index] ^= ran[j];
+          u64Int curr_num = Table[index];
+          if (curr_num == -1)
+            Table[index] ^= ran[j];
+          // Table[index] ^= ran[j];
 #if VERBOSE
           #pragma omp atomic
           Hist[index] += 1;
